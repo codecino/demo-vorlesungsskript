@@ -1,0 +1,67 @@
+%~ \documentclass[12pt,twoside,a4paper,titlepage]{scrbook}
+\documentclass{scrbook}
+
+%~ Anhang ([toc,page] würde noch eine extra Seite for dem Anhang anfügen)
+\usepackage[toc]{appendix}
+
+%~ Mathematische Symbole
+\usepackage{amssymb, amsmath, amscd, amsthm}
+
+%~ Sprache
+\usepackage[ngerman]{babel}
+
+% named cross references
+\usepackage{nameref}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%~ Abbildungen (wichtig für die pdf_tex-Dateien)
+\usepackage{graphicx}
+\usepackage{color}
+%~ \graphicspath{{figures/}} <-- geht nicht.
+\usepackage{import}
+\usepackage{wrapfig}
+
+%~ fancyhdr – Extensive control of page headers and footers in LaTeX2ε
+%~ \usepackage{fancyhdr}
+
+\newcommand{\includegraphicsmaybe}[1]{\IfFileExists{#1}{\includegraphics[width=\textwidth]{#1}}{\includegraphics[width=\textwidth]{abbildungen/platzhalter.jpg}}}
+
+%~ Blindtext weil ich jetzt kein ganzes Skript schreiben möchte - liest eh keiner
+\usepackage{blindtext}
+
+%~ Bequeme Befehle wie \de­gree, \cel­sius, \pert­hou­sand, \mi­cro und \ohm
+\usepackage{gensymb} 
+
+\begin{document}
+
+\begin{titlepage}
+	\begin{center}
+		\vspace*{5em}
+		{\huge Chemie und so}\\[1.5em]
+		{\Large Wintersemester 2013}\\[4em]	
+		{\large \textsc{Vorlesungsskript}}\\[4em]
+		{\large Fakult"at f"ur Mathematik, Informatik und Naturwissenschaften \\
+		der Universit"at Hamburger}\\[1.5em]
+	\end{center}
+\end{titlepage}
+
+%~ Einführung
+\chapter{Einführung}
+\input{kapitel/einfuehrung.tex}
+
+%~ Alkaloide: Hygrin, Solanin usw.
+\chapter{Alkaloide}
+\input{kapitel/alkoloide.tex}
+
+%~ Halogene: fluorid, chloride etc.
+\chapter{Halogene}
+\input{kapitel/halogene.tex}
+
+%~ Ausblick auf die nächste Vorlesung
+\chapter{Ausblick}
+\input{kapitel/ausblick.tex}
+
+
+\end{document}
